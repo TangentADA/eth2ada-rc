@@ -44,7 +44,6 @@ export default function Header01() {
     pages: [],
   };
 
-  // New "Support" navigation item for mobile menu
   const support = {
     id: 3,
     name: "Support",
@@ -54,6 +53,13 @@ export default function Header01() {
       { id: uuidv4(), name: "GitHub", path: "https://github.com/TangentADA/eth2ada-rc", external: true },
       { id: uuidv4(), name: "YouTube", path: "https://youtube.com", external: true },
     ],
+  };
+
+  const dexhunterSwap = {
+    id: 4,
+    name: "Swap",
+    path: "https://swap.eth2ada.com",
+    external: true,
   };
 
   const mobileCollapse = (id) => {
@@ -180,7 +186,7 @@ export default function Header01() {
                   </Link>
                 </li>
 
-                {/* New "Ask xAI" Menu Item */}
+                {/* Ask AI */}
                 <li className="group">
                   <Link href="/terminal">
                     <a>
@@ -192,14 +198,14 @@ export default function Header01() {
                               : ""
                           }
                         >
-                          Ask xAI
+                          Ask AI
                         </span>
                       </button>
                     </a>
                   </Link>
                 </li>
 
-                {/* New "Support" Dropdown Menu for Desktop */}
+                {/* Support */}
                 <li className="js-nav-dropdown nav-item dropdown group relative">
                   <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
                     <span
@@ -240,6 +246,18 @@ export default function Header01() {
                       </li>
                     ))}
                   </ul>
+                </li>
+
+                {/* Dexhunter Swap */}
+                <li className="group">
+                  <a
+                    href={dexhunterSwap.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
+                  >
+                    <span>{dexhunterSwap.name}</span>
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -591,8 +609,6 @@ export default function Header01() {
                 </a>
               </Link>
             </li>
-
-            {/* New "Ask xAI" Menu Item for Mobile */}
             <li className="group" onClick={() => setToggle(false)}>
               <Link href="/terminal">
                 <a>
@@ -604,14 +620,12 @@ export default function Header01() {
                           : ""
                       }
                     >
-                      Ask xAI
+                      Ask AI
                     </span>
                   </button>
                 </a>
               </Link>
             </li>
-
-            {/* New "Support" Menu Item for Mobile */}
             <li className="js-nav-dropdown group relative">
               <button
                 onClick={() => mobileCollapse(support.id)}
@@ -659,6 +673,16 @@ export default function Header01() {
                   </li>
                 ))}
               </ul>
+            </li>
+            <li className="group" onClick={() => setToggle(false)}>
+              <a
+                href={dexhunterSwap.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5"
+              >
+                <span>{dexhunterSwap.name}</span>
+              </a>
             </li>
           </ul>
         </nav>
